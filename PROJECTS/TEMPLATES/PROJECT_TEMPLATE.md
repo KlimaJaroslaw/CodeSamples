@@ -1,12 +1,6 @@
-<div style="display: flex; justify-content: space-between; width: 100%;">
-    <div>
-        <a href="../SHIPIT/SHIPIT.md">GO TO:</a>
-    </div>
-    <div>
-        <a href="../SHIPIT/SHIPIT.md">NEXT: </a>
-    </div>    
-</div>
-<br>
+[:arrow_up: {NAME}](/README.md)
+
+[:arrow_right: NEXT: {NAME}](/README.md)
 
 # {PROJECT NAME}
 {DESCRIPTION}
@@ -14,7 +8,13 @@
 Modules:
 
 ## {MODULE ONE}
-{MODULE ONE DESCRIPTION}
+{MODULE ONE DESCRIPTION}\
+{TECHNOLOGIES}
 
-:link: [te](/README.md)
+:link: [Code Sample](/README.md)
 
+## {MODULE TWO}
+{MODULE TWO DESCRIPTION}\
+{TECHNOLOGIES}
+
+:link: [Code Sample](/README.md)
