@@ -7,15 +7,16 @@ Game project (currently in development) powered by Unity Engine. Featuring funda
 
 Code modules:
 
-## Asset Access
+## Cooldowner :link: [Code Sample](/PROJECTS/SHIPIT/MODULES/COOLDOWNER.md)
+Class responsible for updating cooldowns and notifying senders when cooldown is completed. It is designed to work with all sorts of timers (e.g. ability duration, skill cooldown, etc.)\
+**C#**
+
+## Asset Access :link: [Code Sample](/PROJECTS/SHIPIT/MODULES/ASSETACCESS.md)
 Centralized mechanism for asset load using Unity Addressables.\
 **C#**
 
-:link: [Code Sample](/README.md)
 
-
-## Abilities & Linear Modifiers
-Implementation of character abilities.\
+## Abilities & Linear Modifiers :link: [Code Sample](/README.md)
+Implementation of character ability system.\
 **C#**
 
-:link: [Code Sample](/README.md)
