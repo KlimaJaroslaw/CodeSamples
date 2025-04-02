@@ -11,6 +11,6 @@ Code modules:
 UI visualization of production order using HTML with CSS styles, it contains information of what material should be used for production, quantity to produce and more.\
 **HTML** - **CSS**
 
-## Dynamic Button Form :link: [Code Sample](/PROJECTS/TEMPLATES/404.md)
+## Dynamic Button Form :link: [Code Sample](/PROJECTS/ALTPOM/MODULES/BUTTON_PANEL.md)
 Pop up form, allowed to be initialized with any object collection, displaying buttons with text corresponding to certain property of an object. Stylized with use of HTML and CSS.\
 **C#** - **HTML** - **CSS**

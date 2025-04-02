@@ -111,12 +111,13 @@ private void InitializeDBF()
     }
 }
 ```
+###### Code @ DynamicButtonFormInitialization.cs (fragment)
 I firstly create **DBF** instance and then call Initialize method with correct parameters values.
 
-This is end result:
+This is end result:\
 ![Image @ DynamicButtonForm.png](/PROJECTS/ALTPOM/SOURCE/DynamicButtonForm.png)
 
-###### Code @ DynamicButtonFormInitialization.cs (fragment)
+
 
 # Buttons visualization
 Buttons are visualized with use of HTML and CSS:
