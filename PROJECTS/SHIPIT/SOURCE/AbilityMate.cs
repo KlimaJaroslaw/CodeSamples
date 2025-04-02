@@ -9,7 +9,6 @@ public class AbilityMate : ICooldownOrder, ILinearModifierProvider, IActionRecei
     IAbilityUser user;
     IActionInterface actionInterface;
     Cooldowner cooldowner;
-    //List<CooldownArgs> cooldowns;
     AssetAccess assetAccess;
     #endregion
 
@@ -21,7 +20,6 @@ public class AbilityMate : ICooldownOrder, ILinearModifierProvider, IActionRecei
         this.user = user_;
         this.abilities = new List<Ability>();
         this.assetAccess = assetAccess_;
-        //this.cooldowns = new List<CooldownArgs>();
     }
     #endregion
 
@@ -141,7 +139,6 @@ public class AbilityMate : ICooldownOrder, ILinearModifierProvider, IActionRecei
     #region Interface methods
     public void CooldownComplete(CooldownArgs arg)
     {
-        //cooldowns.Remove(arg);
         Ability ability = this.GetAbility(arg.id);
         if(ability!=null)
             ability.Ready = true;
@@ -169,7 +166,30 @@ public class AbilityMate : ICooldownOrder, ILinearModifierProvider, IActionRecei
 
     public void React(List<AbilityActionArgs> args)
     {
-        throw new System.NotImplementedException();
+        if(args==null)
+            return;
+
+        if(args?.acquire!=null)
+        {
+            foreach(AssetIdentifier id in args.acquire)
+                this.AcquireAbility(id);
+        }
+        
+        if(args?.lose!=null)
+        {
+            foreach(AssetIdentifier id in args.lose)
+                this.LoseAbility(id);
+        }
+
+        if(args?.replace!=null)
+        {
+            foreach (KeyValuePair<AssetIdentifier, AssetIdentifier> item in args.replace)
+            {
+                AssetIdentifier oldId = item.Key;
+                AssetIdentifier newId = item.Value;
+                this.ReplaceAbilities(oldId, newId);
+            }
+        }
     }
     #endregion
 }

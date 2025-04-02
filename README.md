@@ -16,7 +16,7 @@ MRP Sytem designed for resource management for factories.
 :link: [ALTPOM Code samples](/PROJECTS/ALTPOM/ALTPOM.md)
 
 ## 3. IMS20 :clipboard: - ERP System (Company Project)
-Program enabling companies to simplify orders finalization and allow easily to place/edit offers in E-Commerce services.
+Program enabling companies to simplify orders finalization and allow to easily place or edit offers in E-Commerce services.
 
 :link: [IMS20 Code samples](/PROJECTS/IMS20/IMS20.md)
 

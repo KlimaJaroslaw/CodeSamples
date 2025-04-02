@@ -7,7 +7,6 @@ public class AssetIdentifier : ScriptableObject
 {
     public int assetId;
     public string assetName;
-    //public AssetReference assetReference;
 
     #region overrides
     public override bool Equals(object obj)

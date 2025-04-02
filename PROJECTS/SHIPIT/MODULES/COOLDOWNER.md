@@ -1,6 +1,6 @@
 [:arrow_up: ShipIt (Project)](/PROJECTS/SHIPIT/SHIPIT.md)
 
-[:arrow_right: NEXT MODULE: Asset Access](/README.md)
+[:arrow_right: NEXT MODULE: Asset Access](/PROJECTS/SHIPIT/MODULES/ASSETACCESS.md)
 
 # Cooldowner
 Class responsible for updating cooldowns and notifying senders when cooldown is completed. It is designed to work with all sorts of timers (e.g. ability duration, skill cooldown, etc.)

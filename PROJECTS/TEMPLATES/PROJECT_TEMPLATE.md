@@ -5,7 +5,7 @@
 # {PROJECT NAME}
 {DESCRIPTION}
 
-Modules:
+Code modules:
 
 ## {MODULE ONE}
 {MODULE ONE DESCRIPTION}\
