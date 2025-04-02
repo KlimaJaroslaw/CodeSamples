@@ -11,7 +11,7 @@ UI visualization using HTML with CSS styles of production order, it contains inf
 
 
 # UI
-End result visualization of Production Order:
+End result visualization of **Production Order**:
 
 ![Image @ ProductionOrderUI1.png](/PROJECTS/ALTPOM/SOURCE/ProductionOrderUI1.png)\
 ![Image @ ProductionOrderUI2.png](/PROJECTS/ALTPOM/SOURCE/ProductionOrderUI2.png)

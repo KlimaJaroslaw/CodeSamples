@@ -1,10 +1,11 @@
 [:arrow_up: ALTPOM](/PROJECTS/ALTPOM/ALTPOM.md)
 
 
-# Dynamic Button Panel
+# Dynamic Button Form
 Pop up form, allowed to be initialized with any object collection, displaying buttons with text corresponding to certain property of an object. Stylized with use of HTML and CSS.
 
 ## SOURCE CODE FILES
+:link: [ButtonDisplayer.cs](/PROJECTS/ALTPOM/SOURCE/ButtonDisplayer.cs)\
 :link: [DynamicButtonForm.cs](/PROJECTS/ALTPOM/SOURCE/DynamicButtonForm.cs)\
 :link: [DynamicButtonFormInitialization.cs](/PROJECTS/ALTPOM/SOURCE/DynamicButtonFormInitialization.cs)\
 :link: [DynamicButtonForm.html](/PROJECTS/ALTPOM/SOURCE/DynamicButtonForm.html)\
@@ -39,7 +40,7 @@ public partial class DynamicButtonForm : DevExpress.XtraEditors.XtraForm
 *Initilize\<T\>* method takes following parameters:
 - **sourceList_:** List of objects of type T
 - **propertyName_:** Name of the property whose value will be displayed
-- **_caption:** Text of label that is located on top
+- **caption_:** Text of label that is located on top
 - **itemWidth_:** Width of buttons
 - **itemHeight:** Height of buttons
   
@@ -56,7 +57,7 @@ public partial class DynamicButtonForm : DevExpress.XtraEditors.XtraForm
         if (instance == null && display == default)
             return;
 
-        List<ASButtonDisplayer<T>> list = this.gridMain.DataSource as List<ASButtonDisplayer<T>>;
+        List<ButtonDisplayer<T>> list = this.gridMain.DataSource as List<ButtonDisplayer<T>>;
         int index = list.FindIndex(x => EqualityComparer<T>.Default.Equals(x.ObjectData, instance) || x.PropertyToDisplay==display);
         this.Select(index);
     }
@@ -68,7 +69,7 @@ public partial class DynamicButtonForm : DevExpress.XtraEditors.XtraForm
 
     public T GetChoosen<T>()
     {
-        ASButtonDisplayer<T> s = this.choosen as ASButtonDisplayer<T>;
+        ButtonDisplayer<T> s = this.choosen as ButtonDisplayer<T>;
         if (s == null)
             return default;
         else

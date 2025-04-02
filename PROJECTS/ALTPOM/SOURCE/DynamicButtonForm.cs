@@ -60,7 +60,7 @@ namespace MyComponents.DynamicButtonForm
             if (instance == null && display == default)
                 return;
 
-            List<ASButtonDisplayer<T>> list = this.gridMain.DataSource as List<ASButtonDisplayer<T>>;
+            List<ButtonDisplayer<T>> list = this.gridMain.DataSource as List<ButtonDisplayer<T>>;
             int index = list.FindIndex(x => EqualityComparer<T>.Default.Equals(x.ObjectData, instance) || x.PropertyToDisplay==display);
             this.Select(index);
         }
@@ -72,7 +72,7 @@ namespace MyComponents.DynamicButtonForm
 
         public T GetChoosen<T>()
         {
-            ASButtonDisplayer<T> s = this.choosen as ASButtonDisplayer<T>;
+            ButtonDisplayer<T> s = this.choosen as ButtonDisplayer<T>;
             if (s == null)
                 return default;
             else
@@ -83,10 +83,10 @@ namespace MyComponents.DynamicButtonForm
         #region Private
         protected void LoadSource<T>(List<T> feed, string propertyName)
         {
-            List<ASButtonDisplayer<T>> source = new List<ASButtonDisplayer<T>>();
+            List<ButtonDisplayer<T>> source = new List<ButtonDisplayer<T>>();
             for (int i = 0; i < feed.Count; i++)
             {
-                ASButtonDisplayer<T> item = new ASButtonDisplayer<T>(feed[i], propertyName);
+                ButtonDisplayer<T> item = new ButtonDisplayer<T>(feed[i], propertyName);
                 source.Add(item);
             }
             this.gridMain.DataSource = source;
