@@ -7,8 +7,8 @@ MRP Sytem designed for resource management for factories.
 
 Code modules:
 
-## Production order (visualization) :link: [Code Sample](/PROJECTS/TEMPLATES/404.md)
-UI visualization using HTML with CSS styles of production order, it contains information of what material should be used for production, quantity to produce and more.\
+## Production Order (visualization) :link: [Code Sample](/PROJECTS/ALTPOM/MODULES/PRODUCTION_ORDER.md)
+UI visualization of production order using HTML with CSS styles, it contains information of what material should be used for production, quantity to produce and more.\
 **HTML** - **CSS**
 
 ## Dynamic Button Panel :link: [Code Sample](/PROJECTS/TEMPLATES/404.md)

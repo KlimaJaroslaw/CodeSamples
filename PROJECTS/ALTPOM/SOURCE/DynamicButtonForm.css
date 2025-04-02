@@ -1,0 +1,95 @@
+/* Container */
+
+.container {
+    width: 100%;
+    height: 100%; 
+    display: flex;      
+}
+  
+.container:hover .item
+{    
+    color: @Control;
+    background-color: @ControlText;
+    border-color: @HighlightAlternate;
+    box-shadow: 10px 10px 10px @HighlightAlternate;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+    margin-right: 20px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}
+
+.container:hover .item .item-section
+{	  
+    background-color: rgb(255, 255, 255);
+}
+
+.container:active .item
+{	
+    color: @HighlightAlternate;  
+}	
+
+/* Item and section */
+
+.item {  
+    position: relative;
+    width: 100%;
+    margin: 10px;
+    display: flex;
+    padding: 5px;
+    border: 5px solid @HighlightAlternate;
+    border-radius: 15px;
+    color: @ControlText;
+    background-color: @Control;  
+}
+
+.item-section
+{
+    background-color: @ControlText/0.1;
+    width: 100%;	
+    padding: 5px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-content: center;	    
+    overflow: visible;
+    overflow-wrap: anywhere;
+}
+
+.label
+{
+    display: flex;
+    font-size: 20px;	
+}
+
+/* Button Selection */
+
+:root:select .item
+{    
+    color: @Red;    
+    border-color: @Red;
+    box-shadow: 10px 10px 10px @Red;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+    margin-right: 20px;        
+    background-color: rgb(255, 255, 255);
+}
+
+:root:select .item .item-section
+{	  
+    background-color: rgb(255, 255, 255);
+}
+
+:root:select .item:hover
+{
+    color: @Red;    
+    border-color: @Red;
+    box-shadow: 10px 10px 10px @Red;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+    margin-right: 20px;
+    background-color: rgb(255, 255, 255);
+}

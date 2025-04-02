@@ -1,0 +1,54 @@
+<template id="rowTemplate">
+	<div class="item-row">
+		<div class="item-cell-left" style="width: 33%">${Size}</div>
+		<div class="item-cell-right" style="width: 33%">${LeftQty}</div>
+		<div class="item-cell-right" style="width: 33%">${RightQty}</div>
+	</div>	
+</template>
+
+<div class="container">
+	<div class="item">
+		<div class="relative-icon" style="top:2%; left: 4%">
+			<div id="status-icon" class="dot" style="border-color:red"></div>                        					
+		</div>
+		<div class="item-top">
+			<div id="headSection" class="item-section" onclick="onHTMLHeaderClick">
+				<div class="item-section-caption" style="text-align: center">${OrderNumber}</div>
+			</div>
+			<div  class="item-section">				
+				<div class="item-section-text" style="text-align: center;">${Codes}</div>
+				<div class="item-section-text" style="text-align: right;">${Models}</div>				
+				<div class="item-section-text" style="text-align: center; font-size: 13px;">${Qty} / {PlannedQty} {PlannedQtyTotal}</div>				
+				<div class="progress-bar" style="margin-top:5px" >
+					<div id="progress" class="progress"></div>							
+				</div>				
+			</div>
+			<div class="item-section">
+				<div class="item-section-caption">${ShortName}</div>
+				<div class="item-section-text">${Embosses}</div>								
+			</div>
+			<div class="item-section">
+				<div class="item-section-text" style="text-align: center;">${Seconds} ({EndDate})</div>			
+				<div class="item-row">
+					<div class="item-cell-left" style="width: 33%">						
+                        <div id="commentDiv" class="icon" style="text-align: center; visibility: hidden;">
+                            <img src="warning">
+                            <div class="tooltip" style="top: 100%; width: 110px; left: 0%;">${Comment}</div>
+                        </div>						
+					</div>
+					<div class="item-cell-right" style="width: 33%">L</div>
+					<div class="item-cell-right" style="width: 33%">P</div>
+				</div>
+				<dx-collection Items="${Products}" ItemTemplate="rowTemplate"></dx-collection>					
+			</div>
+		</div>
+		<div class="item-bottom">			
+			<div class="item-section" style="flex-direction: row; justify-content: flex-end;">										
+				<div class="item-button" onclick="onHTMLBrowseClick">
+					<img src="show">
+					<div class="tooltip" style="top: 72%; left: 5%; width: 110px;">Order details</div>
+				</div>						
+			</div>
+		</div>
+	</div>    
+</div>

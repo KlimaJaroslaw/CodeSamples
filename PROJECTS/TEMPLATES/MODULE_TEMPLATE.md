@@ -10,7 +10,7 @@
 :link: [FILE1.md](/README.md)\
 :link: [FILE1.md](/README.md)
 
-## {SECTION NAME}
+# {SECTION NAME}
 {SECTION DESCRIPTION ONE}
 ``` csharp
 public static void Main(string[] arg)
@@ -22,7 +22,7 @@ public static void Main(string[] arg)
 {SECTION DESCRIPTION TWO}
 
 
-## {SECTION NAME}
+# {SECTION NAME}
 {SECTION DESCRIPTION ONE}
 ``` csharp
 public static void Main(string[] arg)

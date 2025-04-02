@@ -1,0 +1,295 @@
+[:arrow_up: ALTPOM](/PROJECTS/ALTPOM/ALTPOM.md)
+
+[:arrow_right: NEXT MODULE: Dynamic Button Panel](/PROJECTS/ALTPOM/MODULES/BUTTON_PANEL.md)
+
+# Production Order (visualization)
+UI visualization using HTML with CSS styles of production order, it contains information of what material should be used for production, quantity to produce and more.
+
+## SOURCE CODE FILES
+:link: [ProductionOrderUI.html](/PROJECTS/ALTPOM/SOURCE/ProductionOrderUI.html)\
+:link: [ProductionOrderUI.css](/PROJECTS/ALTPOM/SOURCE/ProductionOrderUI.css)
+
+
+# UI
+End result visualization of Production Order:
+
+![Image @ ProductionOrderUI1.png](/PROJECTS/ALTPOM/SOURCE/ProductionOrderUI1.png)\
+![Image @ ProductionOrderUI2.png](/PROJECTS/ALTPOM/SOURCE/ProductionOrderUI2.png)
+
+It features:
+- **Order details information**: order number, ordered quantity, material (in bold), etc.
+- **Progress bar**: informs how many products have already been produced
+- **Array**: Specifies type and size of produced item
+- **Details Button**
+
+Below I share HTML and CSS:
+# HTML
+``` html
+<template id="rowTemplate">
+	<div class="item-row">
+		<div class="item-cell-left" style="width: 33%">${Size}</div>
+		<div class="item-cell-right" style="width: 33%">${LeftQty}</div>
+		<div class="item-cell-right" style="width: 33%">${RightQty}</div>
+	</div>	
+</template>
+
+<div class="container">
+	<div class="item">
+		<div class="relative-icon" style="top:2%; left: 4%">
+			<div id="status-icon" class="dot" style="border-color:red"></div>                        					
+		</div>
+		<div class="item-top">
+			<div id="headSection" class="item-section" onclick="onHTMLHeaderClick">
+				<div class="item-section-caption" style="text-align: center">${OrderNumber}</div>
+			</div>
+			<div  class="item-section">				
+				<div class="item-section-text" style="text-align: center;">${Codes}</div>
+				<div class="item-section-text" style="text-align: right;">${Models}</div>				
+				<div class="item-section-text" style="text-align: center; font-size: 13px;">${Qty} / {PlannedQty} {PlannedQtyTotal}</div>				
+				<div class="progress-bar" style="margin-top:5px" >
+					<div id="progress" class="progress"></div>							
+				</div>				
+			</div>
+			<div class="item-section">
+				<div class="item-section-caption">${ShortName}</div>
+				<div class="item-section-text">${Embosses}</div>								
+			</div>
+			<div class="item-section">
+				<div class="item-section-text" style="text-align: center;">${Seconds} ({EndDate})</div>			
+				<div class="item-row">
+					<div class="item-cell-left" style="width: 33%">						
+                        <div id="commentDiv" class="icon" style="text-align: center; visibility: hidden;">
+                            <img src="warning">
+                            <div class="tooltip" style="top: 100%; width: 110px; left: 0%;">${Comment}</div>
+                        </div>						
+					</div>
+					<div class="item-cell-right" style="width: 33%">L</div>
+					<div class="item-cell-right" style="width: 33%">P</div>
+				</div>
+				<dx-collection Items="${Products}" ItemTemplate="rowTemplate"></dx-collection>					
+			</div>
+		</div>
+		<div class="item-bottom">			
+			<div class="item-section" style="flex-direction: row; justify-content: flex-end;">										
+				<div class="item-button" onclick="onHTMLBrowseClick">
+					<img src="show">
+					<div class="tooltip" style="top: 72%; left: 5%; width: 110px;">Order details</div>
+				</div>						
+			</div>
+		</div>
+	</div>    
+</div>
+```
+###### Code @ ProductionOrderUI.html
+
+
+
+# Styles
+``` css
+/* Container and item*/
+
+.container{
+    width: 155px;	
+    height: 300px;		
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;		
+    justify-content: center;
+    align-items: center;
+    text-align: center;  
+}
+
+.item{		
+    width: 130px;	
+    height: 270px;
+    margin: 10px;
+    padding: 5px;    
+    background-color: @Window;		
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;	
+    justify-content: space-between;			
+    border: 1% solid @HighlightAlternate;	    
+    overflow: visible;
+    overflow-wrap: break-word;    
+    position: relative;
+}
+
+.item:hover{
+    box-shadow: 0px 0px 10px @HighlightAlternate;	
+}
+
+.item-top{
+    height: 100%;	
+    display: flex;
+    flex-direction: column;	
+    border-radius: 8px;				
+    justify-content: flex-start;			
+    overflow: hidden;
+}
+
+.item-bottom{
+    height: 40px;	
+    display: flex;
+    flex-direction: column;	
+    border-radius: 8px;				
+    justify-content: space-between;				
+    overflow: hidden;
+}
+
+/* Item sections */
+
+.item-section{	
+    width: auto;
+    height: auto;
+    padding: 5px;	
+    display: flex;
+    flex-direction: column;	
+    border-radius: 8px;			
+    background-color: @WindowText/0.05;
+    justify-content: flex-start;		
+    margin-bottom: 5px;
+}
+
+.item-section-caption{	
+    text-align: left;	
+    justify-content: flex-start;	
+    display: flex;
+    flex-direction: column;		
+    font: 12px Tahoma, sans-serif;		
+    color: @WindowText;	
+    font-size: 13px;
+    font-weight: bold;
+    width: 100%;
+    overflow: hidden;
+}
+
+.item-section-text{			
+    text-align: left;	
+    justify-content: center;	
+    display: flex;
+    flex-direction: column;	
+    font: 12px Tahoma, sans-serif;		
+    color: @WindowText;		
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Item array */
+
+.item-row{
+    width: 100%;
+    height: 16px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 2px solid @HighlightAlternate;			
+}
+
+.item-cell-left{
+    height: 100%;
+    width: auto;	
+    text-align: center;			
+    font: 12px Tahoma, sans-serif;		
+    color: @WindowText;		
+    overflow: hidden;
+    overflow-wrap: break-word;		
+}
+
+.item-cell-right{
+    @extend .item-cell-left
+    border-left: 2px solid @HighlightAlternate;		
+}
+
+
+/* Additional UI elements */
+
+.icon{
+    text-align: left;	
+    justify-content: center;	
+    font: 12px Tahoma, sans-serif;		
+    color: @WindowText;		
+    width: 100%;
+    overflow: hidden;
+    position: relative;    
+}
+
+.relative-icon{
+    position: absolute;
+    box-shadow: 0px 0px 5px @HighlightAlternate;
+    border: solid 2px @HighlightAlternate;
+    border-radius: 5px;    
+    padding: 2px;	    
+    background-color: @Window;		
+}
+
+.dot{
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 100%;
+}
+
+.progress-bar{
+    height: 2px;
+    width: 96%;	
+    margin: 0px 2%;	
+    background-color: @WindowText;	
+    justify-content: center;	
+}
+ 
+.progress{	
+    width: 40%;
+    height: 4px;		
+    box-shadow: 0px 0px 10px rgb(236, 178, 19);
+    background-color: rgb(236, 178, 19);		
+    position: relative;
+    top: -1px;
+}
+
+.item-button{
+    width: auto;
+    height: 15px;
+    padding: 5px;
+    margin: 2px;
+    background-color: @HighlightAlternate;		
+    border-radius: 8px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;		
+    align-content: space-around;
+    justify-content: space-around;
+    text-align: center;	
+    color: rgb(255, 255, 255);				
+}
+
+.item-button:hover{
+    box-shadow: 0px 0px 10px @HighlightAlternate;
+    color: @HighlightAlternate;	
+    background-color: rgb(255, 255, 255);			
+}
+ 
+/* Tooltips */
+
+.tooltip{
+    visibility: hidden;
+    text-align: center;    
+    box-shadow: 0px 0px 10px @HighlightAlternate;
+    border: solid 1px @HighlightAlternate;
+    border-radius: 5px;  
+    padding: 5px;
+    overflow: hidden;
+    overflow-wrap: anywhere;    
+    position: absolute;
+    z-index: 1;    
+    font: 12px Tahoma, sans-serif;		
+    color: @WindowText;	      
+    background-color: @Window;    
+}
+
+.item-button:hover .tooltip{
+    visibility: visible;
+}
+
+.icon:hover .tooltip{
+    visibility: visible;
+}
+```
+###### Code @ ProductionOrderUI.css

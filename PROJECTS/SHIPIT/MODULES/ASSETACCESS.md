@@ -7,7 +7,7 @@ Centralized mechanism for asset load using Unity Addressables.
 
 ## SOURCE CODE FILES
 :link: [AssetIdentifier.cs](/PROJECTS/SHIPIT/SOURCE/AssetIdentifier.cs)\
-:link: [AssetAccess.cs](/PROJECTS/SHIPIT/SOURCE/AssetAccess.cs)\
+:link: [AssetAccess.cs](/PROJECTS/SHIPIT/SOURCE/AssetAccess.cs)
 
 # Asset idnetification
 To identify each asset (example: image, *Unity's Scriptable Object*, etc) I use Scriptable Object Asset Identifer:
@@ -28,7 +28,7 @@ Field assetName corresponds to value of Unity *Addresables asset* key
 
 This approach enables scalability and makes asset management easier. It also simplify serialization process.
 
-In scenario where player may choose one of multiple skin of character, I could create as many AssetIdentifer objects as needed and just load one at the time.
+In scenario where player may choose one of multiple skins for a character, I could create as many AssetIdentifer objects as needed and just load one at the time.
 
 
 # Asset loading

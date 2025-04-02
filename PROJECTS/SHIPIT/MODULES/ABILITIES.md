@@ -1,7 +1,7 @@
 [:arrow_up: ShipIt (Project)](/PROJECTS/SHIPIT/SHIPIT.md)
 
 # Abilities & Linear Modifiers
-Implementation of character ability system.\
+Implementation of character ability system.
 
 ## SOURCE CODE FILES
 :link: [Ability.cs](/PROJECTS/SHIPIT/SOURCE/Ability.cs)\
