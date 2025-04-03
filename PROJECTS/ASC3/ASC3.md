@@ -7,6 +7,6 @@ Integrator with external services. Application that ensures transfer of data bet
 
 Code modules:
 
-## APIHandler :link: [Code Sample](/PROJECTS/TEMPLATES/404.md)
-Module that simplifies communication with other APIs. It uses HttpClient class from System.Net library to make requests.\
+## APIHandler :link: [Code Sample](/PROJECTS/ASC3/MODULES/APIHANDLER.md)
+Module that simplifies communication with RESTful APIs. It uses HttpClient class from System.Net library to make requests.\
 **C#**

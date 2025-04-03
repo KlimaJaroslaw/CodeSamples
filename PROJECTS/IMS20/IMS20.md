@@ -7,6 +7,6 @@ ERP System application. Program enabling companies to simplify orders finalizati
 
 Code modules:
 
-## Barcode Listener :link: [Code Sample](/PROJECTS/TEMPLATES/404.md)
+## Barcode Listener :link: [Code Sample](/PROJECTS/IMS20/MODULES/BARCODE_LISTENER.md)
 Class that captures barcode reader signals in WinFroms environment.\
 **C#**
